@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from "./logo.svg";
+import "./App.css";
+import Main from "./view/Main";
+import LoginView from "../src/view/LoginView";
+import { Route } from "react-router";
+import WriteView from "./view/WriteView";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Route path={["/main", "/"]} component={Main} exact={true} />
+      <Route path="/login" component={LoginView} />
+      <Route path="/writeRequest" component={WriteView} />
     </div>
   );
 }
